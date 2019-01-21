@@ -1,15 +1,3 @@
-# git-test
+# Java I/O Examples
 
-comment 1
-
-comment 2
-
-comment 3
-
-
-
-
-
-
-
-FIX THE ISSUE
+This project exemplify Java I/O functionality
