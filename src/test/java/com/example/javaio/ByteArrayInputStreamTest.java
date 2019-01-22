@@ -1,12 +1,13 @@
 package com.example.javaio;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ByteArrayInputStreamTest {
 
@@ -23,7 +24,7 @@ public class ByteArrayInputStreamTest {
 
         //THEN
         String result = bos.toString();
-        Assertions.assertEquals(result, "John Doe");
+        assertEquals(result, "John Doe");
     }
 
     private InputStream asInputStream(String value) {
