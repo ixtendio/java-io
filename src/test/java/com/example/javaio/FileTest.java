@@ -28,6 +28,7 @@ import static java.nio.file.StandardWatchEventKinds.ENTRY_DELETE;
 import static java.nio.file.StandardWatchEventKinds.ENTRY_MODIFY;
 import static java.nio.file.StandardWatchEventKinds.OVERFLOW;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class FileTest {
 
@@ -35,8 +36,9 @@ public class FileTest {
 
     @Test
     public void relativePath() {
-        Path path = fs.getPath("src", "test", "resource", "loremipsum-1.txt");
-        assertEquals(Files.exists(path), true);
+        Path path = fs.getPath("src", "test", "resources", "loremipsum-1.txt");
+
+        assertTrue(Files.exists(path));
     }
 
     @Test
