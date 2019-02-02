@@ -1,4 +1,4 @@
-package com.example.javaio;
+package com.github.tavyy.javaio;
 
 import org.junit.jupiter.api.Test;
 
@@ -21,14 +21,14 @@ public class ResourceLocatorTest {
 
     @Test
     public void locateFileRelativeToExecutionDirUsingFolders() {
-        URL url = ResourceLocatorTest.class.getResource("/com/example/javaio/FileTest.class");
+        URL url = ResourceLocatorTest.class.getResource("/com/github/tavyy/javaio/FileTest.class");
 
         assertNotNull(url);
     }
 
     @Test
     public void convertUrlToPath() throws Exception {
-        URL url = ResourceLocatorTest.class.getResource("/com/example/javaio/FileTest.class");
+        URL url = ResourceLocatorTest.class.getResource("/com/github/tavyy/javaio/FileTest.class");
 
         Path path = Path.of(url.toURI());
         assertNotNull(path);

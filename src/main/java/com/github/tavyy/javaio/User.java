@@ -1,4 +1,4 @@
-package com.example.javaio;
+package com.github.tavyy.javaio;
 
 import java.io.Serializable;
 

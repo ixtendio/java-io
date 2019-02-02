@@ -1,6 +1,6 @@
-package com.example.javaio.nio;
+package com.github.tavyy.javaio.nio;
 
-import com.example.javaio.FileTest;
+import com.github.tavyy.javaio.FileTest;
 import org.junit.jupiter.api.Test;
 
 import java.nio.MappedByteBuffer;

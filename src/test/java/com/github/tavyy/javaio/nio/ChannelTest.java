@@ -1,4 +1,4 @@
-package com.example.javaio.nio;
+package com.github.tavyy.javaio.nio;
 
 import org.junit.jupiter.api.Test;
 
