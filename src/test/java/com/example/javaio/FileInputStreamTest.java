@@ -25,7 +25,7 @@ public class FileInputStreamTest {
         }
 
         //THEN
-        assertEquals(new String(fileContent, UTF_8), EXPECTED_RESULT);
+        assertEquals(EXPECTED_RESULT, new String(fileContent, UTF_8));
     }
 
     @Test
@@ -39,6 +39,6 @@ public class FileInputStreamTest {
         }
 
         //THEN
-        assertEquals(new String(fileContent, UTF_8), EXPECTED_RESULT);
+        assertEquals(EXPECTED_RESULT, new String(fileContent, UTF_8));
     }
 }

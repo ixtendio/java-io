@@ -24,7 +24,7 @@ public class ByteArrayInputStreamTest {
 
         //THEN
         String result = bos.toString();
-        assertEquals(result, "John Doe");
+        assertEquals("John Doe", result);
     }
 
     private InputStream asInputStream(String value) {

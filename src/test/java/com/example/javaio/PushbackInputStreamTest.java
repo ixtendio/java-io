@@ -32,6 +32,6 @@ public class PushbackInputStreamTest {
                 }
             }
         }
-        assertEquals(sb.toString(), expected);
+        assertEquals(expected, sb.toString());
     }
 }
