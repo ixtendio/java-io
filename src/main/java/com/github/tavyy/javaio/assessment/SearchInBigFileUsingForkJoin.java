@@ -1,31 +1,28 @@
-package com.github.tavyy.javaio.assessment.executorservice;
+package com.github.tavyy.javaio.assessment;
 
+import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.nio.channels.FileChannel;
 import java.nio.file.Path;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+import java.util.concurrent.ForkJoinPool;
 
-public class SearchInBigFileUsingExecutorService {
+public class SearchInBigFileUsingForkJoin {
 
-    private static final ExecutorService executorService = Executors.newFixedThreadPool(8);
+    public static void main(String[] args) throws IOException {
 
-    public static void main(String[] args) throws Exception {
-
-        String wordToSearch = "Euler";
         Path filePath = Path.of("..", "large-files", "enwik9");
 
         try (RandomAccessFile raf = new RandomAccessFile(filePath.toFile(), "r");
              FileChannel fileChannel = raf.getChannel()) {
 
+            String wordToSearch = "Euler";
+            ForkJoinPool forkJoinPool = new ForkJoinPool(SearchTask.MAX_THREADS);
+
             long startTime = System.currentTimeMillis();
-            WordCounter wordCounter = WordCounter.create(fileChannel, wordToSearch);
-            int result = wordCounter.count(executorService);
+            int result = forkJoinPool.invoke(SearchTask.create(fileChannel, wordToSearch));
             long endTime = System.currentTimeMillis();
 
             System.out.println("The word '" + wordToSearch + "' has been found " + result + " times and it took " + (endTime - startTime) + " ms");
         }
-
-        executorService.shutdownNow();
     }
 }
